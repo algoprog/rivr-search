@@ -1,6 +1,6 @@
 ![alt tag](https://lh3.googleusercontent.com/-ZZIlkVakrww/VquuMSO7YhI/AAAAAAAAAZ0/7T7OgCN4j1M/s920-Ic42/promo.png)
 # RIVR
-RIVR is the world's first open source torrents search engine. It scrapes torrent websites (Kickass, ThePirateBay, isoHunt, Limetorrents, 1337x), and give fast results with a ranking based on torrent hash, seeds and peers. For each torrent it provides a magnet link and when available a torrent file displaying its contents. RIVR is a personal project I decided to make open source with the hope of finding people to build a distributed torrents search engine with high quality results.
+RIVR is the world's first open source torrents search engine. It scrapes torrent websites (Kickass, ThePirateBay, isoHunt, Limetorrents, 1337x), and gives fast results with a ranking based on torrent hash, seeds and peers. For each torrent it provides a magnet link and when available a torrent file displaying its contents. RIVR is a personal project I decided to make open source with the hope of finding people to build a distributed torrents search engine with high quality results.
 
 # Features
 * Scrapers for Kickass, ThePirateBay, isoHunt, Limetorrents, 1337x
