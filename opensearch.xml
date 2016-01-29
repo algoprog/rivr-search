@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>RIVR</ShortName>
+	<Description>Torrents Search Engine</Description>
+	<Tags>rivr torrent torrents bittorrent search engine</Tags>
+	<Contact>admin@rivr.eu</Contact>
+	<InputEncoding>UTF-8</InputEncoding>
+	<Url type="text/html" template="https://rivr.eu/search?q={searchTerms}" />
+	<Url type="application/x-suggestions+json" template="https://rivr.eu/suggest?q={searchTerms}" />
+	<Image height="16" width="16" type="image/x-icon">https://rivr.eu/favicon.ico</Image>
+</OpenSearchDescription>

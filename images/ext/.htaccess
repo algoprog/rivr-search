@@ -1,0 +1,6 @@
+ErrorDocument 404 /rivr2/images/ext/file.png
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files> 

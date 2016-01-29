@@ -1,0 +1,20 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+
+RewriteRule ^[a-zA-Z0-9]{40}$ torrent.php?hash=$1
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index($|\ |\?)
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R,L,NC]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]
+
+ErrorDocument 404 /rivr/error.php
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files> 

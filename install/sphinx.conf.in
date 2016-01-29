@@ -1,0 +1,163 @@
+source mysql_all
+{
+    type                    = mysql
+
+    sql_host                = localhost
+    sql_user                = root
+    sql_pass                = 
+    sql_db                  = rivr2
+    sql_port                = 3306  # optional, default is 3306
+
+    sql_query               = \
+        SELECT id, title, source_id, seeds, peers, date, category, size, hash \
+        FROM rtindex WHERE parent = 1
+	
+	sql_attr_string			= hash
+	
+	sql_attr_uint			= source_id
+	sql_attr_uint			= seeds
+	sql_attr_uint			= peers
+	sql_attr_uint			= date
+	
+	sql_attr_uint			= category
+	sql_attr_uint			= size
+
+	sql_query_pre			= SET NAMES utf8
+}
+
+source mysql0 : mysql_all
+{
+	sql_query               = \
+        SELECT id, title, hash, source_id, seeds, peers, date, category, size \
+        FROM rtindex WHERE id % 4 = 0 AND parent = 1;
+}
+source mysql1 : mysql_all
+{
+	sql_query               = \
+        SELECT id, title, hash, source_id, seeds, peers, date, category, size \
+        FROM rtindex WHERE id % 4 = 1 AND parent = 1;
+}
+source mysql2 : mysql_all
+{
+	sql_query               = \
+        SELECT id, title, hash, source_id, seeds, peers, date, category, size \
+        FROM rtindex WHERE id % 4 = 2 AND parent = 1;
+}
+source mysql3 : mysql_all
+{
+	sql_query               = \
+        SELECT id, title, hash, source_id, seeds, peers, date, category, size \
+        FROM rtindex WHERE id % 4 = 3 AND parent = 1;
+}
+
+
+
+
+index mysql_all
+{
+	type 			= plain
+    source          = mysql_all
+    path            = G:\SphinxData\rivr\mysql_all
+}
+
+index mysql0 : mysql_all
+{
+	source			= mysql0
+	path            = G:\SphinxData\rivr\mysql0
+}
+index mysql1 : mysql_all
+{
+	source			= mysql1
+	path            = G:\SphinxData\rivr\mysql1
+}
+index mysql2 : mysql_all
+{
+	source			= mysql2
+	path            = G:\SphinxData\rivr\mysql2
+}
+index mysql3 : mysql_all
+{
+	source			= mysql3
+	path            = G:\SphinxData\rivr\mysql3
+}
+
+
+
+index orig
+{
+	type = distributed
+	local = mysql0
+	local = mysql1
+	local = mysql2
+	local = mysql3
+}
+
+
+
+
+index rtindex
+{
+    type           		= rt
+	
+	rt_mem_limit		= 1024M
+ 
+    path           		= G:\SphinxData\rivr\rtindex
+
+    rt_field			= title
+
+	rt_attr_string			= hash
+
+	rt_attr_uint			= source_id
+	rt_attr_uint			= seeds
+	rt_attr_uint			= peers
+	rt_attr_uint			= date
+
+	rt_attr_uint			= category
+	rt_attr_uint			= size
+
+	ondisk_attrs		= 1
+	
+}
+
+index rtindex0 : rtindex
+{
+	path           		= G:\SphinxData\rivr\rtindex0
+}
+index rtindex1 : rtindex
+{
+	path           		= G:\SphinxData\rivr\rtindex1
+}
+index rtindex2 : rtindex
+{
+	path           		= G:\SphinxData\rivr\rtindex2
+}
+index rtindex3 : rtindex
+{
+	path           		= G:\SphinxData\rivr\rtindex3
+}
+
+
+indexer
+{
+    mem_limit = 512M
+}
+
+
+
+
+searchd
+{
+    listen                  = 9312
+    listen                  = 9306:mysql41
+    log                     = D:\Applications\Sphinx\bin\log\searchd.log
+    query_log               = D:\Applications\Sphinx\bin\log\query.log
+    read_timeout            = 5
+    max_children            = 30
+    pid_file                = D:\Applications\Sphinx\bin\data\searchd.pid
+    seamless_rotate         = 1
+    preopen_indexes         = 0
+    unlink_old              = 1
+    workers                 = threads # for RT to work
+    binlog_path             = D:\Applications\Sphinx\bin\log
+	dist_threads 			= 4
+}
