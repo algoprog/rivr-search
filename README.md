@@ -52,9 +52,9 @@ RIVR is the world's first open source torrents search engine. It scrapes torrent
 # Donate
 The search engine is at an early stage and many optimizations and expensive hardware are needed to put it live. The main problem is the refreshing of the torrents seeders and leechers that needs to be done for millions of torrents every 12 or 24 hours. That's why we need a few donations.
 
+bitcoin:3EtjNVUcEc3fSab2U9JH9uHmr7aCoKcP5K
+
 # License
 ![alt tag](https://camo.githubusercontent.com/0e71b2b50532b8f93538000b46c70a78007d0117/68747470733a2f2f7777772e676e752e6f72672f67726170686963732f67706c76332d3132377835312e706e67)
 
 You can redistribute and/or modify RIVR under the terms of the GNU General Public License v.3 as published by the Free Software Foundation.
-
-bitcoin:3EtjNVUcEc3fSab2U9JH9uHmr7aCoKcP5K
