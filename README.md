@@ -11,7 +11,7 @@ RIVR is the world's first open source torrents search engine. It scrapes torrent
 
 # Installation
 * Create a MySQL database and import schema.sql, sources.sql and trackers.sql from install folder.
-* Import any torrent data you want to rtindex table (I will upload a dump with 13M torrents soon).
+* Download the MySQL dump from https://goo.gl/C4EqPn. It contains ~13M torrents from the supported websites. I will create a torrent later if there is high demand for this file.
 * Edit includes/config.php with your MySQL host, username, password and database name.
 * Edit install/sphinx.conf.in (mysql_all source) with your MySQL host, username, password and database name.
 * Use install/sphinx.conf.in to create the Sphinx indexes:
