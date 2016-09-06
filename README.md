@@ -9,6 +9,8 @@ RIVR is the world's first open source torrent search engine. It scrapes torrent 
 * Movie & TV series info when the search query is relevant
 * View torrent contents
 
+![alt tag](https://lh3.googleusercontent.com/9XAwkiC4csnHZq5ByraQlH4VkioRmFqUq2pQcapzrSY-fbq2Kr43Sl8kT9L93yMnS0Xy-C9eFHB6uTNPHruRPTTQMdKsyptNXvp03JnMApX-NJpfIrZCPMo1ZRQloY7r0cQ9Xj6q9rg6JCBIxh5yiSY0S-a5GYSeKQVO7XbGFyWqAIlmalfneUPAAl2XG2HoPqkfryVA_3MT0nLgiRpwzuaP2PyU49BF3Ym_3HwjV5xXL90yqjcG52B7K8dfYlfw7xC_o5XIdajPJg7GakvB7HNHhCJuKbk89nV4yKgXvraLkN_EgyqvlfTvM7skWI1gdQVYUPjh0WyDITl3pv6b6OMimfQpTgjVqO18hPsiEtH6kUIJfuUTEmlw84SpXaWF6EtW9bcCPBO-VRxAa2nPVOTibpOyAAw8FiC-9aBowdHSoTKd-81vIhLYJp3Gxw2ktJLvmiXM1J_KcnsYPhhxS4-KxzP0_3_hp0F-KUuMqGqEmiR4MzLIo3RnS8whQTHb7oHr6T7Wwii_fk9MR3SBGm6Ipg2j2UdO7gO0PNlVfmcwW-3TKO_bFvxoLWW_a0jI5KN98Jl8peSZFoWUhLLWE6luR6FyN1QDlBFP9X00MePu11g=w1473-h884-no)
+
 # Installation
 * Create a MySQL database and import schema.sql, sources.sql and trackers.sql from install folder.
 * Download and import the MySQL dump from https://goo.gl/vW0kqd. It contains ~13M torrents.
